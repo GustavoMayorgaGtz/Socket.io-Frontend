@@ -1,1 +1,16 @@
-<p>inicio works!</p>
+<div class="container_primary">
+    <h1>Messenger fake</h1>
+    <form [formGroup]="form">
+      <label for="username">message</label>
+      <input  type="text" name="username" class="input" formControlName="username">
+      <br>
+      <br>
+       <div class="enviar" (click)="enviar()">
+        Enviar
+       </div>
+    </form>
+    <div *ngFor="let item of mensajes">
+     {{item}}
+    </div>
+    
+</div>

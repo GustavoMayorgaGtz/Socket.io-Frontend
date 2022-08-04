@@ -1,0 +1,40 @@
+////////////////VARIABLES
+$colorPrimary : #D1EEE1
+$colorSecondary: #495F75
+$font1 : 'PT Sans', sans-serif
+$font2 : 'Mukta', sans-serif
+/////////////////////////
+@mixin font($font: $font2, $size: 12px)
+    font-family: $font
+    font-size: calc($size + 0.6vw)
+    font-weight: bold
+/*************************/
+h1
+    @include font($font2, 30px)
+
+/*************************/
+.container_primary
+    display: flex
+    align-items: center
+    flex-direction: column
+    width: 100vw
+    height:  100vh 
+    background-color: $colorPrimary
+/*************************/
+form
+    display: flex
+    flex-direction: column
+    margin-top: 10px
+    label
+        @include font
+    input
+        @include font
+        margin-left: 10px
+/*************************/
+.enviar
+    @include font
+    text-align: center
+    margin:10px
+    padding: 15px 5px
+    background-color: $colorSecondary
+    color: white

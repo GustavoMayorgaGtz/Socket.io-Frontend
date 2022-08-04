@@ -1,18 +1,14 @@
-interface ServerToClientEvents {
-    noArg: () => void;
-    basicEmit: (a: number, b: string, c: Buffer) => void;
-    withAck: (d: string, callback: (e: number) => void) => void;
+import { AbstractControl, FormBuilder, FormGroup } from "@angular/forms";
+
+  export interface formLogin {
+    username: String;
+    
   }
-  
-  interface ClientToServerEvents {
-    hello: () => void;
-  }
-  
-  interface InterServerEvents {
-    ping: () => void;
-  }
-  
-  interface SocketData {
-    name: string;
-    age: number;
+
+  export interface formLoginBuilder extends FormGroup{
+    value: formLogin;
+    controls: {
+      username: AbstractControl;
+      
+    }
   }

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { SocketIoModule } from 'ngx-socket-io';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +14,7 @@ import { InicioComponent } from './Pages/inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
-    
+    ReactiveFormsModule,
     AppRoutingModule,
     
   ],

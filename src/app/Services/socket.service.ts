@@ -1,25 +1,24 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { io }  from 'socket.io-client'
 
-import { Socket } from 'ngx-socket-io';
 @Injectable({
   providedIn: 'root'
 })
-export class SocketService extends Socket{
-// please note that the types are reversed
+export class SocketService{
+io = io("ws://192.168.100.129:3000/")
+event : EventEmitter<String> = new EventEmitter();
+  constructor() {}
 
-//public io = new Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>();
-
-  constructor() {
-    super({
-      url: "http://localhost:3000"
-  });
+ listen()
+ {
+    this.io.on("test", (res) => {
+       this.event.emit(res);
+    })
   }
-
-  Conexion()
+  sendMail(message: String)
   {
-   /* this.io.on("connection", (socket) => {
-    
-
-      });*/
+    this.io.emit("test",message);
   }
+
+
 }
